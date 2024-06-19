@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div>
-      <Products />
+      <Products cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />
     </div>
   );
 }
