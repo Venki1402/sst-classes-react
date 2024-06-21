@@ -1,6 +1,10 @@
-import PropTypes from 'prop-types';
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
+import PropTypes from "prop-types";
 
-function AddToCart({ product, cart, increaseQuantity, decreaseQuantity }) {
+function AddToCart({ product }) {
+  const { cart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
+
   function increase() {
     increaseQuantity(product);
   }
@@ -10,7 +14,7 @@ function AddToCart({ product, cart, increaseQuantity, decreaseQuantity }) {
   }
 
   let quantity = cart[product.id] ? cart[product.id].quantity : 0;
-  
+
   if (quantity === 0) {
     return (
       <div>
@@ -21,7 +25,7 @@ function AddToCart({ product, cart, increaseQuantity, decreaseQuantity }) {
     return (
       <div>
         <button onClick={decrease}>Remove</button>
-        <span>{quantity}</span>
+        <span> {quantity} </span>
         <button onClick={increase}>Add</button>
       </div>
     );
