@@ -1,6 +1,7 @@
-import ProductCard from "../ProductCard/ProductCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import ProductCard from '../ProductCard/ProductCard';
+import './Product.css';
 
 function Products({ cart, increaseQuantity, decreaseQuantity }) {
   const [products, setProducts] = useState([]);
@@ -14,7 +15,7 @@ function Products({ cart, increaseQuantity, decreaseQuantity }) {
   }, []);
 
   return (
-    <div>
+    <div className="products">
       {products.map((item, index) => (
         <ProductCard
           key={index}

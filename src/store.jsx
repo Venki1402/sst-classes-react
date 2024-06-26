@@ -1,7 +1,9 @@
-// import { act } from "react";
-import { createStore } from "redux";
-import { omit } from "lodash";
-function cartReducer(state= { items: {}}, action) {
+import { createStore } from 'redux';
+import { omit } from 'lodash';
+
+const initialState = { items: {} };
+
+function cartReducer(state = initialState, action) {
   switch (action.type) {
     case "ADD_TO_CART": {
       const product = action.payload;
@@ -48,13 +50,11 @@ function cartReducer(state= { items: {}}, action) {
           }
         }
       }
-
     }
     default:
       return state;
   }
 }
-
 
 const store = createStore(cartReducer);
 
