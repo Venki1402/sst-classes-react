@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
+import { addToCart, removeFromCart } from "../../stores/Cart";
 
 function ReduxAddToCart({ product }) {
   console.log("add to cart", product.id);
@@ -7,11 +8,13 @@ function ReduxAddToCart({ product }) {
   const dispatch = useDispatch();
 
   const increase = () => {
-    dispatch({ type: "ADD_TO_CART", payload: product });
+    // dispatch({ type: "ADD_TO_CART", payload: product });
+    dispatch(addToCart(product));
   };
 
   const decrease = () => {
-    dispatch({ type: "REMOVE_FROM_CART", payload: product });
+    // dispatch({ type: "REMOVE_FROM_CART", payload: product });
+    dispatch(removeFromCart(product));
   };
 
   const quantity = useSelector((state) => {

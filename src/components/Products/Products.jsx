@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ProductCard from '../ProductCard/ProductCard';
+import Categories from "../Categories/Categories";
 import './Product.css';
 
 function Products({ cart, increaseQuantity, decreaseQuantity }) {
@@ -16,6 +17,7 @@ function Products({ cart, increaseQuantity, decreaseQuantity }) {
 
   return (
     <div className="products">
+      <Categories/>
       {products.map((item, index) => (
         <ProductCard
           key={index}

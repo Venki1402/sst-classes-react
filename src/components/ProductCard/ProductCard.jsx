@@ -18,6 +18,7 @@ function ProductCard({ product, cart, increaseQuantity, decreaseQuantity }) {
     <div className="product-card">
       <p onClick={printTitle}>{product.title}</p>
       <p ref={pRef} style={{ display: "none" }}>{product.price.value} {product.price.currency}</p>
+      <p>{product.category}</p>
       <ReduxAddToCart
         product={product}
         cart={cart}
